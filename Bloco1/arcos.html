@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcos</title>
+</head>
+<body>
+    <!-- area do desenho -->
+    <canvas id="meu_canvas" width="300" height="300"></canvas>
+    <script>
+    // CANVAS E CONTEXTO
+        // referenciando o Canvas
+        var canvas = document.getElementById('meu_canvas');
+        // obtendo o contexto gráfico
+        var context = canvas.getContext('2d');
+
+        // Cores e espessura da linha
+        context.fillStyle = 'gray'; //preenchimento
+        context.strokeStyle = 'black'; //cor da linha
+        context.lineWidth = 2; //espessura da linha
+
+        // EXEMPLO TEÓRICO
+
+        // Fórmula: 
+        // var graus = ...;
+        // var radianos = graus * Math.PI / 180;
+
+        // context.arc(50: x(ponto central da circunferência),50: y(ponto central da circunferência), 40: raio da circunferência, 90*Math.PI/180: (Inicio:90 graus), 270*Math.PI/180: (Termino: 270graus), false: sentido anti-horario ou true: sentido horario);
+
+        // !EXEMPLO TEÓRICO
+
+        // Primeiro Arco:
+        context.beginPath(); //NovoPath  
+        context.arc(50, 50, 40, 90*Math.PI/180, 270*Math.PI/180,false); //Desenha
+        context.fill(); //Preenchimento
+        context.stroke(); //Contorno
+
+        // Segundo Arco:
+        context.beginPath(); //ao comentar essa linha os arcos se unem
+        context.arc(150, 50, 40, 90*Math.PI/180, 270*Math.PI/180,true); //Desenha
+        context.fill(); //Preenchimento
+        context.stroke(); //Contorno
+
+        // Circuferência Completa 
+        context.beginPath();
+        context.arc(250, 50, 40, 0, 2*Math.PI); //Desenha
+        context.fill(); //Preenchimento
+        context.stroke(); //Contorno
+    </script>
+</body>
+</html>

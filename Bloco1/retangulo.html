@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retângulo</title>
+</head>
+<body>
+    <!-- area do desenho -->
+    <canvas id="meu_canvas" width="200" height="200"></canvas>
+    <script>
+    // CANVAS E CONTEXTO
+        // referenciando o Canvas
+        var canvas = document.getElementById('meu_canvas');
+        // obtendo o contexto gráfico
+        var context = canvas.getContext('2d');
+
+        // DESENHANDO UM RETÂNGULO
+
+        // Preenchimento Vermelho
+        //fillStyle: cor de preenchimento
+        context.fillStyle = 'red' 
+        // fillRect (x,y, largura, altura): pinta completamente uma área retangular
+        context.fillRect(50, 50, 100, 100); 
+
+        // Contorno Azul com Espessura de 3px
+        // lineWidth: espessura da linha em pixels
+        context.lineWidth = 3;
+        // strokeStyle: cor da linha
+        context.strokeStyle = 'blue';
+        // strokeRect (x,y, largura, altura): desenha um contorno do retangular
+        context.strokeRect(25, 25, 150, 150);
+    </script>
+</body>
+</html>

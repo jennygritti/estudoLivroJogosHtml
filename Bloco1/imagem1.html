@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagem 1</title>
+</head>
+<body>
+    <canvas id="meu_canvas" width="800" height="100"></canvas>
+   <script>
+      // Canvas e contexto
+      var canvas = document.getElementById('meu_canvas');
+      var context = canvas.getContext('2d');
+
+      //Carregar a imagem
+      var imagem = new Image();
+      imagem.src = 'img/ovni.png'; //a imagem tem 64px de largura e 32px de altura
+      //Aqui usaremos drawImage
+      imagem.onload = function(){
+        //começar na posição 20
+        var x = 20;
+        //desenhar as imagens
+        //drawImagm(imagem, x, y, largura, altura): desenha a imagem inteira, na posição e tamanho especificados
+        for (var i = 1; i <= 5; i++){
+            // context.drawImage(imagem, x, 20, 64, 32);
+            // x += 70;
+
+            //reduzindo para a metade
+            // context.drawImage(imagem, x, 20, 32, 16);
+            // x += 40;
+
+            // ampliando para o dobro do tamanho
+            context.drawImage(imagem, x, 20, 128, 64);
+            x += 150;
+        }
+      }
+    </script>
+    
+</body>
+</html>
